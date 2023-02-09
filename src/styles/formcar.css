@@ -1,0 +1,79 @@
+.form {
+    background-color: #054891;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 3em;
+    padding: 1.1em 0 1.3em 0.8em;
+    opacity: 0.9;
+    width: 100%;
+    max-width: 900px;
+}
+.form section:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-self: center;
+    gap: 0.5em;
+    color: #0bf5a7;
+    max-width: 520px;
+}
+.form section:nth-child(2) {
+    padding-left: 1em;
+}
+.form section:nth-child(1) h2 {
+    padding-bottom: 0.5em;
+    letter-spacing: 0.15em;
+}
+.form__car {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1em;
+}
+.form__car div {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: center;
+    font-size: 1.2rem;
+    background-color: #046ddcd8;
+    border-radius: 0.3em 0 0 0.3em;
+}
+.form__car div label { 
+    padding: 0 0.5em 0 0.5em;
+    width: 100px;
+    color: black;
+    font-weight: 600;
+}
+.form__car div input {
+    height: 50px;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 400;
+    outline: none;
+    padding: 0.6em;
+}
+
+.car__btn {
+    height: 45px;
+    border-radius: 0 0 0.5em 0.5em;
+    background-color: #046ddcd8;
+    box-shadow: 1px 3px 2px #00000086;
+    color: aliceblue;
+    text-shadow: -1px 1px 2px #000000fe;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.1em;
+    letter-spacing: 0.1em;
+}
+
+.form__img {
+    border-radius: 50%;
+    animation: anim_opacity linear 1.5s infinite;
+}
+
+@keyframes anim_opacity {
+    10% {opacity: 0.7;}
+    40% {opacity: 0.5;}
+    80% {opacity: 0.9;}
+}

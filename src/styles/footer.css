@@ -1,0 +1,47 @@
+.footer {
+    width: 100%;
+    background: linear-gradient(180deg, #062e59 70%, #046ddcd8 100%);
+    margin-top: 3em;
+    color: #adacacee;
+}
+.footer__info {
+    display: flex;
+    gap: 1.5em;
+    text-align: center;
+    justify-content: space-around;
+    padding: 0.5em;
+    line-height: 1.8em;
+    color: #adacacee;
+}
+
+.info__redes_social {
+    display: flex;
+    gap: 1.2em;
+}
+.info__redes_social p a{
+    color: #f0f8ffcb;
+    font-size: 2rem;
+}
+.info__code a {  
+    text-decoration: none;
+}
+.info__code a p {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color:#f0ffffdd;
+}
+.info__code a p span {
+    font-size: 1rem;
+    color: lawngreen;
+    cursor: pointer;
+}
+
+.footer__bottom hr {
+    opacity: 0.5;
+}
+.footer__bottom p {
+    padding: 1.2em;
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: 600;
+}

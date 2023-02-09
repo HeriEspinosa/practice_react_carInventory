@@ -1,0 +1,41 @@
+.card {
+    width: 290px;
+    height: 200px;
+    border: 2px solid gainsboro;
+    display: flex;
+    flex-direction: column;
+    padding: 0.8em;
+    border-radius: 1em;
+    background-color: #03b278ab;
+    gap: 1.5em;
+}
+
+.card h3{
+    height: 30px;
+    text-align: center;
+}
+
+.card ul {
+    display: grid;
+    gap: 0.3em;
+    padding-left: 0.5em;
+}
+
+.card ul li span{
+    font-weight: 600;
+    padding-right: 0.5em;
+}
+
+.card__button {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 1.4em;
+}
+
+.card__button button {
+    border-radius: 0.5em;
+    aspect-ratio: 5;
+    font-weight: 600;
+
+}
