@@ -7,7 +7,7 @@ const Footer = () => {
             <section className='footer__info'>
                 <section className="info__code">
                     <h3 className="info__code-title">GitHub</h3>
-                    <a href="https://github.com/HeriEspinosa/repo_react_entregable3.git" target='blank'><p>Hecha un Vistazo a mi Codigo <span>Aqui</span></p></a>
+                    <a href="https://github.com/HeriEspinosa/repo_react_car_inventory.git" target='blank'><p>Hecha un Vistazo a mi Codigo <span>Aqui</span></p></a>
                 </section>
                 <section className="info__redes">
                     <h3 className="footer__information-title">Social</h3>

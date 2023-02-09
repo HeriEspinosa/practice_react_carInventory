@@ -1,50 +1,57 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useForm } from "react-hook-form";
 import '../styles/formcar.css'
+import defaultValues from "../utils/defaultValuesForm";
 
-const FormCar = ({ createNewCard }) => {
+const FormCar = ({ createNewCard, updateInfo, updateCarById }) => {
 
-    const handleSumit = (e => {
-        e.preventDefault()
+    const { register, handleSubmit, reset } = useForm()
 
-        createNewCard(
-            e.target.carBrand.value.trim(),
-            e.target.carName.value.trim(),
-            e.target.carColor.value.trim(),
-            e.target.carYear.value.trim(),
-            e.target.carPrice.value.trim()
-        )
+    useEffect(() => {
+        if (updateInfo) {
+            reset(updateInfo)
+        }
+    }, [updateInfo])
 
-        e.target.reset()
-    })
+    const submit = data => {
+        if (updateInfo) {
+            // Actualizar
+            updateCarById(updateInfo.id, data)
+        } else {
+            // Crear
+            createNewCard(data)
+        }
+        reset(defaultValues)
+    }
 
 
     return (
         <section className='form'>
             <section>
                 <h2>INSERT YOUR CAR</h2>
-                <form className='form__car' action="" autoComplete="off" onSubmit={handleSumit}>
+                <form className='form__car' action="" autoComplete="off" onSubmit={handleSubmit(submit)}>
                     <div>
                         <label htmlFor="">Brand:</label>
-                        <input id='carBrand' type="text" placeholder='Insert brand' />
+                        <input {...register('brand')} id="brand" type="text" placeholder="Enter a car brand" />
                     </div>
                     <div>
-                        <label htmlFor="">Name:</label>
-                        <input id='carName' type="text" placeholder='Insert name' />
+                        <label htmlFor="">Model:</label>
+                        <input {...register('model')} id="model" type="text" placeholder="Enter a car model" />
                     </div>
                     <div>
                         <label htmlFor="">Color:</label>
-                        <input id='carColor' type="text" placeholder='Insert color' />
+                        <input {...register('color')} id="color" type="text" placeholder="Enter a car color" />
                     </div>
                     <div>
                         <label htmlFor="">Year:</label>
-                        <input id='carYear' type="number" placeholder='Insert year' />
+                        <input {...register('year')} id="year" type="number" placeholder="Enter a car year" />
                     </div>
                     <div>
                         <label htmlFor="">Price:</label>
-                        <input id='carPrice' type="number" placeholder='Insert price' />
+                        <input {...register('price')} id="price" type="number" placeholder="Enter a car price" />
                     </div>
 
-                    <button className='car__btn'>INSERT CAR</button>
+                    <button className='car__btn'>{updateInfo ? 'Update car' : 'Create car'}</button>
                 </form>
             </section>
 

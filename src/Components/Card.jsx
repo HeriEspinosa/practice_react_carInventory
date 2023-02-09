@@ -2,22 +2,25 @@ import React from 'react'
 import '../styles/card.css';
 
 
-const Card = ({ car, deleteCarById }) => {
+const Card = ({ car, deleteCarById, setUpdateInfo }) => {
 
-    const handleClick = () => deleteCarById(car.id)
+    const handleDelete = () => deleteCarById(car.id)
+
+    const handleUpdate = () => setUpdateInfo(car)
 
     return (
         <div className="cards">
             <article className='card'>
-                <h3>{`#${car.id} ${car.brand} ${car.model}`}</h3>
+                <h4>#{car.id}</h4>
+                <h3>{`${car.brand} ${car.model}`}</h3>
                 <ul>
                     <li><span>Year: </span>{car.year}</li>
                     <li><span>Color: </span>{car.color}</li>
                     <li><span>Price: </span>${car.price}</li>
                 </ul>
                 <div className='card__button'>
-                    <button onClick={handleClick}> Delete Car</button>
-                    <button> Update Car</button>
+                    <button onClick={handleDelete}> Delete Car</button>
+                    <button onClick={handleUpdate}>Update Car</button>
                 </div>
 
             </article>
