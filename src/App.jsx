@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import '../styles/App.css'
+import './styles/App.css'
 import Card from './Components/Card'
 import Footer from './Components/Footer'
 import FormCar from './Components/FormCar'
